@@ -1,7 +1,7 @@
 ''' This is a quiz about Hunt of the wilderpeople ''' 
-int = maxscore = 9
-int = Points = 0
-int= incorrect = 0
+MAXSCORE = 9
+points = 0
+incorrect = 0
 index = 0
 # This list asks all the questions
 questions_list = ["1. What nickname does Paula use to describe Ricky to Bella?\n\
@@ -11,19 +11,22 @@ questions_list = ["1. What nickname does Paula use to describe Ricky to Bella?\n
                  "3. What movie was referenced? \n"
                  "A) The Muppets B) lord of the rings C) Terminator\n",]
 # This list has all the answer to see it you were right
-answer_list = ["C)", "A)", "C)"]
+answer_list = ["C", "A", "C"]
 
 for question in questions_list:
-   answer = input(question)
-   answer = answer.upper()
-if answer == questions_list[index]:
-       index = index + 1
-       Points += 1
-else: 
-    incorrect += 1
+     answer = input(question)
+     answer = answer.upper()
+     if answer == answer_list[index]:
+          points = points + 1
+          
+     else: 
+          incorrect = incorrect + 1
+          
+     index = index + 1
+    
+
+#tallys ups the correct and incorrect points
+print(f'Correct {points}')
+print(f'Incorrect {incorrect}')
 
 
-
-#tally ups the correct and incorrect points
-print(f'Correct answer {Points}')
-print(f'Wrong answers {incorrect}')
