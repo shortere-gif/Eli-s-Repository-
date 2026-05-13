@@ -3,9 +3,9 @@ MAXSCORE = 9
 points = 0
 incorrect = 0
 index = 0
+index_1 = 0
 print("Hunt of the wilderpeople quiz\n")
-
-
+important_list = ["A","B","C"] # type: ignore
 # This list has all the answer to see it you were right
 answer_list = ["C","A","C","A","B","C","B","B","A"]
 # This adds a point to if you got it correct wrong and changes the question.
@@ -54,31 +54,27 @@ questions_list = [
 "A) The film is directed by Taika Waititi\n"
 "B) The film is directed by Te Whanau a Apanui\n"
 "C) The film is directed by Te Atarangi Amoroa\n",
-
 ]
-for question in questions_list: # type: ignore
-     answer = input(question)
-     answer = answer.upper()
-     if answer == answer_list[index]:
-          points = points + 1  
-     else: 
-          incorrect = incorrect + 1
-     index = index + 1
-
 while True:
-   try:
-        if answer == answer_list:
-         answer = True
-         
-         answer = False
-         print('That answer is invalid')
-         break
-   except:
-         # Will say it is not a answer
-       print("We hate Lucian")
-       break
+     for question in questions_list: # type: ignore
+        answer = input(question)
+        answer = answer.upper()
+        if answer == important_list[index_1]: 
+          answer = True
+          break
+          answer == False
+        else:
+           print('That answer is invalid')
+        if answer == answer_list[index]:
+          points = points + 1  
+        else: 
+          incorrect = incorrect + 1
+          index = index + 1
+          break
+     
+
+
 
 #tallys ups the correct and incorrect points
 print(f'Correct {points}')
 print(f'Incorrect {incorrect}')
-
