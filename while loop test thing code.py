@@ -4,6 +4,7 @@ points = 0
 incorrect = 0
 index = 0
 index_1 = 0
+redo = 0
 print("Hunt of the wilderpeople quiz\n")
 important_list = ["A","B","C"] # type: ignore
 # This list has all the answer to see it you were right
@@ -55,9 +56,14 @@ questions_list = [
 "B) The film is directed by Te Whanau a Apanui\n"
 "C) The film is directed by Te Atarangi Amoroa\n",
 ]
+answer = False
 while True:
      for question in questions_list: # type: ignore
         answer = input(question)
+        if answer == True:
+         break
+        else:
+           redo = redo + 1
         answer = answer.upper()
         if answer == important_list[index_1]: 
           answer = True
@@ -70,7 +76,7 @@ while True:
         else: 
           incorrect = incorrect + 1
           index = index + 1
-          break
+     break
      
 
 
