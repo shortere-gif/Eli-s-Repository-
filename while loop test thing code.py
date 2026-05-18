@@ -4,7 +4,7 @@ points = 0
 incorrect = 0
 index = 0
 print("Hunt of the wilderpeople quiz\n")
-important_list = ["A","B","C"] # type: ignore
+important_list = ["A", "B", "C"] # type: ignore
 # This list has all the answer to see it you were right
 answer_list = ["C","A","C","A","B","C","B","B","A"]
 # This adds a point to if you got it correct wrong and changes the question.
@@ -56,17 +56,15 @@ questions_list = [
 ]
 while True:
          for question in questions_list: # type: ignore
-            answer = input(question)
-         if answer in important_list:
-             answer == True
-             answer = answer.upper()
-         if answer == answer_list[index]:
-              points = points + 1  
-         else: 
-              incorrect = incorrect + 1
-              index = index + 1
-         if answer == False:
-                  print('That answer is invalid')
+               answer = input(question).upper()
+               if answer in important_list:
+                    if answer == answer_list[index]:
+                         points = points + 1  
+                    else: 
+                         incorrect = incorrect + 1
+                    index = index + 1
+               else:
+                    print('That answer is invalid')
          break
      
 #tallys ups the correct and incorrect points
