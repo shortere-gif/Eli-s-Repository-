@@ -54,18 +54,18 @@ questions_list = [
 "B) The film is directed by Te Whanau a Apanui\n"
 "C) The film is directed by Te Atarangi Amoroa\n",
 ]
-while True:
-         for question in questions_list: # type: ignore
+for question in questions_list: # type: ignore
                answer = input(question).upper()
                if answer in important_list:
                     if answer == answer_list[index]:
                          points = points + 1  
                     else: 
                          incorrect = incorrect + 1
+
                     index = index + 1
                else:
                     print('That answer is invalid')
-         break
+         
      
 #tallys ups the correct and incorrect points
 print(f'Correct {points}')
