@@ -1,13 +1,16 @@
 ''' This is a quiz about Hunt of the wilderpeople ''' 
+# These create the variables and constant
 MAXSCORE = 9
 points = 0
 incorrect = 0
 index = 0
+# This prints a line introducing the quiz
 print("Hunt of the wilderpeople quiz\n")
+# This list makes sure you dont type a invalid answer
 important_list = ["A", "B", "C"] # type: ignore
 # This list has all the answer to see it you were right
 answer_list = ["C","A","C","A","B","C","B","B","A"]
-# This adds a point to if you got it correct wrong and changes the question.
+# This list contains all of the question for the quiz
 questions_list = [
 "1. What nickname does Paula use to describe Ricky to Bella? \n" 
 "A) Walking whale\n"
@@ -54,24 +57,37 @@ questions_list = [
 "B) The film is directed by Te Whanau a Apanui\n"
 "C) The film is directed by Te Atarangi Amoroa\n",
 ]
-
+#Puts your answer to the question into answer variable
 for question in questions_list: # type: ignore
-          #This puts the person answer for the question into answer variable
+               #Makes your answer into an capital letter
                answer = input(question).upper()
-          #Checks if the answer is in Important list so it has to be A B or C
+#Checks if your answer is in the important list
+#  so you can put anything that is not A B C
                if answer in important_list:
-     #Adds points to the point variable if right 
+#if the answer equals answer list which has all the answers
+#  in order than move to the next question with the index
                     if answer == answer_list[index]:
+                         #Adds a point to points variable
                          points = points + 1  
                     else: 
-                         #Adds points to incorrect variable if wrong
+                         # Adds a incorrect point to the incorrect variable 
                          incorrect = incorrect + 1
-                  #Moves on to the next question after adding the points
+ #Adss to the index which changes the question when ansered 
                     index = index + 1
                else:
+                    #tells the user there answer is invalid
                     print('That answer is invalid')
          
-     
-#tallys ups the correct and incorrect points
-print(f'Correct {points}')
-print(f'Incorrect {incorrect}')
+     #Print a the amount of points you got out of 9
+#If you score 9 this code will print
+if points >= 9:
+       print(f"Congratulations you got {points}/9")
+#If you score 8 this code will print
+if points == 8 :
+     print(f'Well done you got {points}/9')
+#If you score less than 7 this code will print
+if points == 7 :
+     print(f'Well done you got {points}/9')
+#If you score 7 this code will print
+if points < 7:
+     print(f"Unlucky you got {points}/9")
