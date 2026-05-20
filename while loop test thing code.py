@@ -54,14 +54,19 @@ questions_list = [
 "B) The film is directed by Te Whanau a Apanui\n"
 "C) The film is directed by Te Atarangi Amoroa\n",
 ]
+
 for question in questions_list: # type: ignore
+          #This puts the person answer for the question into answer variable
                answer = input(question).upper()
+          #Checks if the answer is in Important list so it has to be A B or C
                if answer in important_list:
+     #Adds points to the point variable if right 
                     if answer == answer_list[index]:
                          points = points + 1  
                     else: 
+                         #Adds points to incorrect variable if wrong
                          incorrect = incorrect + 1
-
+                  #Moves on to the next question after adding the points
                     index = index + 1
                else:
                     print('That answer is invalid')
