@@ -57,26 +57,22 @@ questions_list = [
 "B) The film is directed by Te Whanau a Apanui\n"
 "C) The film is directed by Te Atarangi Amoroa\n",
 ]
-#Puts your answer to the question into answer variable
-for question in questions_list: # type: ignore
-               #Makes your answer into an capital letter
+
+#This code makes your answer into an capital letter checks if its a valid answer 
+# and adds points if right or wrong and adss one to index to change question.
+while True:
+ for question in questions_list: # type: ignore
                answer = input(question).upper()
-#Checks if your answer is in the important list
-#  so you can put anything that is not A B C
-               if answer in important_list:
-#if the answer equals answer list which has all the answers
-#  in order than move to the next question with the index
-                    if answer == answer_list[index]:
-                         #Adds a point to points variable
+               if answer in important_list: 
+                    if answer == answer_list[index]:  
                          points = points + 1  
-                    else: 
-                         # Adds a incorrect point to the incorrect variable 
+                    else:
                          incorrect = incorrect + 1
- #Adss to the index which changes the question when ansered 
-                    index = index + 1
                else:
-                    #tells the user there answer is invalid
-                    print('That answer is invalid')
+                  print('That answer is invalid')
+ break
+index = index + 1
+
          
      #Print a the amount of points you got out of 9
 #If you score 9 this code will print
