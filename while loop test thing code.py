@@ -60,21 +60,21 @@ questions_list = [
 
 #This code makes your answer into an capital letter checks if its a valid answer 
 # and adds points if right or wrong and adss one to index to change question.
-while True:
- for question in questions_list: # type: ignore
+for question in questions_list: # type: ignore
+          while True:
                answer = input(question).upper()
-               if answer in important_list: 
-                    if answer == answer_list[index]:  
-                         points = points + 1  
-                    else:
-                         incorrect = incorrect + 1
+               if answer in important_list:       
+                    break
+               if answer == answer_list[index]:  
+                    points = points + 1  
+                    index = index + 1
                else:
-                  print('That answer is invalid')
- break
-index = index + 1
+                    incorrect = incorrect + 1
+                    index = index + 1
 
-         
-     #Print a the amount of points you got out of 9
+print('That answer is invalid enter another answer')   
+               
+
 #If you score 9 this code will print
 if points >= 9:
        print(f"Congratulations you got {points}/9")
