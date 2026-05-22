@@ -7,7 +7,7 @@ index = 0
 # This prints a line introducing the quiz
 print("Hunt of the wilderpeople quiz\n")
 # This list makes sure you dont type a invalid answer
-important_list = ["A", "B", "C"] # type: ignore
+important_list = ["A", "B", "C"] 
 # This list has all the answer to see it you were right
 answer_list = ["C","A","C","A","B","C","B","B","A"]
 # This list contains all of the question for the quiz
@@ -60,19 +60,19 @@ questions_list = [
 
 #This code makes your answer into an capital letter checks if its a valid answer 
 # and adds points if right or wrong and adss one to index to change question.
-for question in questions_list: # type: ignore
+for question in questions_list:
           while True:
                answer = input(question).upper()
                if answer in important_list:       
+                    if answer == answer_list[index]:  
+                         points = points + 1  
+                         index = index + 1
+                    else:
+                         incorrect = incorrect + 1
+                         index = index + 1
                     break
-               if answer == answer_list[index]:  
-                    points = points + 1  
-                    index = index + 1
                else:
-                    incorrect = incorrect + 1
-                    index = index + 1
-
-print('That answer is invalid enter another answer')   
+                   print('That answer is invalid enter another answer')     
                
 
 #If you score 9 this code will print
